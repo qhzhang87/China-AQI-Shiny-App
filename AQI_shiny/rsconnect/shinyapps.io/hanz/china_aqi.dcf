@@ -1,0 +1,10 @@
+name: china_aqi
+title: China AQI
+account: hanz
+server: shinyapps.io
+appId: 191298
+bundleId: 877391
+url: https://hanz.shinyapps.io/china_aqi/
+when: 1498078098.58973
+asMultiple: FALSE
+asStatic: FALSE

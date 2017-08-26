@@ -5,7 +5,7 @@ Data from https://www.aqistudy.cn/historydata/index.php
 (沈阳 缺 2015-04-04～2015-04-09)
 
 Columns:
-日期: Dec 2013 to July 2015
+日期: Dec 2013 to July 2017
 AQI
 质量等级
 PM2.5

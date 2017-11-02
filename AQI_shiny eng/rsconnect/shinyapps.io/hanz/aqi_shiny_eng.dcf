@@ -1,0 +1,10 @@
+name: aqi_shiny_eng
+title: AQI_shiny_eng
+account: hanz
+server: shinyapps.io
+appId: 230742
+bundleId: 1056940
+url: https://hanz.shinyapps.io/aqi_shiny_eng/
+when: 1509659202.31648
+asMultiple: FALSE
+asStatic: FALSE

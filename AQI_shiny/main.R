@@ -96,7 +96,8 @@ p_pie <- plot_ly(dat_AQI_count, labels = ~level, values = ~count, type = 'pie',
 
 
 
-# pollutants --------------------------------------------------------------
+# Pollutants --------------------------------------------------------------
+
 updatemens = list(
   list(
     type = "buttons",# direction = "right", xanchor = 'center', yanchor = "top",
@@ -165,6 +166,7 @@ p_pollutants <- plot_ly(dat_AQI, marker = list(color = '#1a81bc')) %>%
 
 
 # Scraping history data ---------------------------------------------------
+
 cityNames = c('上海', '北京', '广州', '深圳', '杭州', '天津', '南京', '成都', '武汉',
               '西安', '重庆', '长沙', '珠海', '厦门', '大连', '青岛', '宁波',
               '福州', '兰州', '南宁', '贵阳', 
@@ -183,12 +185,17 @@ get_AQI_history = function(city){
     ########
     data$日期 = as.Date(data$日期) 
     names(data)[3] = "AQI级别"
+    data$AQI级别 = as.factor(data$AQI级别)
     # 排名 换到前面？？？
-    ########
+    ##
     data
 }
 
-
+table_color = function(df){
+  cols2 = c("#4DAF4A", "#FFFF33", "#FF7F00", "#E41A1C", "#984EA3", "#A65628", '#FFFFFF')
+  names(cols2) = c('优', '良', '轻度污染', '中度污染', '重度污染', '严重污染', NA)
+  cols2[levels(df$AQI级别)]
+}
 
 
 

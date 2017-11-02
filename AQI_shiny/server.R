@@ -43,7 +43,7 @@ shinyServer(function(input, output, session) {
     ) %>% 
       formatStyle(
         'Level', 
-        backgroundColor = styleEqual(dat_AQI_levels, cols[names(cols) %in% dat_AQI_levels])
+        backgroundColor = styleEqual(dat_AQI_levels, cols[dat_AQI_levels])
       ) 
   )
   
@@ -109,8 +109,9 @@ shinyServer(function(input, output, session) {
     %>%
       formatStyle(
         'AQI级别',
-        backgroundColor = styleEqual(unique(na.omit(city_df()$AQI级别)), 
-                                     cols[names(cols) %in% unique(na.omit(city_df()$AQI级别))]) # na.omit() because there may be NAs in the data
+        # backgroundColor = styleEqual(unique(na.omit(city_df()$AQI级别)), 
+        #                              cols[names(cols) %in% unique(na.omit(city_df()$AQI级别))]) # na.omit() because there may be NAs in the data
+        backgroundColor = styleEqual(levels(city_df()$AQI级别), table_color(city_df()))
       )
   )
 
